@@ -1,20 +1,6 @@
 ---
-title: "Prévia do Projeto de IC"
-subtitle: "Distúrbios florestais, séries temporais e birdstrikes"
-author: "Levi Gurgel de Lima"
-institute: "Instituto Tecnológico de Aeronáutica - em parceria com INPE"
-date: "`r format(Sys.Date(), '%d/%m/%Y')`"
-output: 
-  beamer_presentation:
-    theme: "Madrid"
-    colortheme: "dolphin"
-    fonttheme: "structurebold"
-header-includes:
-  - \usepackage{booktabs}
----
-
----
 title: "Efeito de distúrbios florestais sobre o risco de birdstrike"
+subtitle: "Uma análise da viabilidade de pesquisa para uma espécie de ave"
 author: "Levi Gurgel de Lima"
 date: "`r Sys.Date()`"
 output: beamer_presentation
@@ -23,81 +9,221 @@ header-includes:
   - \usecolortheme{dolphin}
 ---
 
-## Introdução
+# Introdução: O problema dos *Birdstrikes*
 
-- Birdstrikes representam risco à aviação civil e militar.  
-- Fatores ambientais, como alterações na cobertura do solo, podem influenciar a presença de aves próximas a pistas aeroportuárias.  
-- Imagens de satélite e séries temporais são ferramentas-chave para entender esses padrões.  
+## O que são *birdstrikes*?
 
----
+-   Colisões entre **aves e aeronaves**.
+-   Causam **danos sérios**, com riscos à segurança e prejuízos econômicos globais.
+-   O custo anual estimado nos EUA chega a mais de US$ 1,2 bilhão.
+
+## A conexão com o ambiente
+
+-   Ações humanas, como desmatamento e urbanização, alteram o habitat das aves.
+-   Essa alteração pode aumentar a exposição de certas aves aos aeroportos, elevando o risco de colisões.
+
+# Pergunta da pesquisa e Justificativa
+
+## Pergunta da pesquisa
+
+-   Como **distúrbios florestais** nas imediações de um aeroporto afetam o risco de *birdstrike* para uma determinada espécie de ave?
+
+## Justificativa
+
+-   A segurança aérea é um problema global e crescente.
+-   Entender a relação entre paisagem e *birdstrikes* é crucial para desenvolver **medidas de mitigação eficazes**.
+-   Este projeto busca preencher lacunas de conhecimento sobre essa dinâmica, focando em uma espécie de estudo.
+
+# Metodologia: Análise de Viabilidade
 
 ## Objetivo
 
-- Investigar a relação entre distúrbios florestais e ocorrências de birdstrike.  
-- Comparar cenários em dois contextos:  
-  - **EUA**: com dados de GPS de aves.  
-  - **Brasil**: com dados de ocorrência (eBird, CENIPA).  
+-   Avaliar a **viabilidade de pesquisa** no Brasil e nos EUA, considerando os dados, recursos e parcerias disponíveis em cada país.
+-   O foco principal da Iniciação Científica (IC) será a região com maior potencial para responder à pergunta de pesquisa.
 
----
+## Por que a viabilidade é o foco?
 
-## Síntese dos artigos (EUA)
+-   A natureza e a qualidade dos dados de *birdstrike* e ecologia variam muito entre os países.
+-   Uma análise preliminar é essencial para garantir a robustez e o sucesso do projeto.
 
-- Escolha da espécie: (*Cathartes aura*)
-- [Aqui você coloca o resumo dos dois artigos enviados pelo professor: espécies estudadas, metodologia, resultados principais.]  
-- Possíveis pontos para destacar:
-  - Relação entre uso do solo e presença de urubus (*Cathartes aura*).  
-  - Influência de distúrbios ambientais (ex.: desmatamento, urbanização).  
+# Cenário 1: Estados Unidos
 
----
+## Dados e parcerias
 
-## Dados disponíveis — EUA
+-   **Dados de Birdstrikes:** Utilização do banco de dados público da FAA (Federal Aviation Administration), com relatórios históricos de colisões.
+-   **Dados de Habitat/Ecologia:** Integração de dados de distribuição e migração de aves (e.g., eBird).
+-   **Parceria com pesquisa do LabGEO ITA** Dados de GPS de boa qualidade do *Cathares aura* nos EUA pesquisados no LabGEO do ITA.
 
-- **Espécie-alvo**: *Cathartes aura* (Urubu-da-cabeça-vermelha).  
-- **Fonte de ocorrência**: GPS (LabGeo, Élida).  
-- **Variáveis ambientais**: NDVI, cobertura da terra (Brazil Data Cube).  
-- **Dados de birdstrike**: FAA, relatórios regionais.  
+## Escolha da espécie de estudo
 
----
+-   Para encontrar a espécie ideal, foram consultados estudos que analisam a frequência de *birdstrikes* nos EUA e a ecologia de aves em habitats sob distúrbios.
+-   Os artigos a seguir foram cruciais para a escolha, fornecendo informações-chave sobre a espécie mais relevante para o estudo.
 
-## Dados disponíveis — Brasil
+### Artigos
 
-- **Espécie-alvo**: [A definir].  
-- **Fonte de ocorrência**: eBird, SINBIOTA.  
-- **Variáveis ambientais**: NDVI, cobertura da terra (Brazil Data Cube).  
-- **Dados de birdstrike**: CENIPA (dados incompletos).  
+- *Landscape transformations produce favorable roosting conditions for turkey vultures and black vultures*
 
----
+- *Environmental drivers of variability in the movement ecology of turkey vultures (Cathartes aura) in North and South America*
 
-## Tabela de metadados preliminar
+# Análise dos Artigos
 
-```{r echo=FALSE, message=FALSE, warning=FALSE}
-library(knitr)
-library(kableExtra)
+## Artigo 1: "Landscape transformations..." (Hill et al.)
 
-metadados <- data.frame(
-  Variavel = c("Espécie alvo", "Fonte de ocorrência", 
-               "Dados ambientais", "Dados de birdstrike"),
-  EUA = c("Cathartes aura (Urubu-da-cabeça-vermelha)", 
-          "GPS (LabGeo, Élida)",
-          "NDVI, cobertura da terra (Brazil Data Cube)",
-          "Bases FAA / relatórios locais"),
-  Brasil = c("[Espécie a definir]", 
-             "eBird, SINBIOTA",
-             "NDVI, cobertura da terra (Brazil Data Cube)",
-             "CENIPA")
-)
+-   **Objetivo:** Avaliar como a transformação da paisagem por humanos influencia a escolha de locais de pouso noturno (*roosting*) de urubus-de-cabeça-vermelha (*Cathartes aura*) e urubus-de-cabeça-preta (*Coragyps atratus*).
+-   **Justificativa para a escolha do artigo:** Este estudo oferece uma visão detalhada da relação entre a presença de urubus e a paisagem modificada, um tema central para pesquisa.
 
-kable(metadados, format = "latex", booktabs = TRUE) %>%
-  kable_styling(latex_options = c("hold_position", "striped"),
-                font_size = 9, full_width = FALSE, position = "center")
-```
+## Artigo 1: Metodologia e Abordagem Estatística
 
-## Próximos Passos
+-   **Metodologia:**
+    -   Utilização de dados de GPS de 7 urubus-de-cabeça-vermelha e 11 urubus-de-cabeça-preta, totalizando dados de 7.916 noites.
+    -   Análise de **uso vs. disponibilidade**: comparação entre os locais de pouso reais e locais aleatórios que poderiam ter sido usados.
+-   **Abordagem Estatística:**
+    -   Uso de **regressão logística condicional** para prever a probabilidade de uma ave escolher um local específico.
+    -   Análise de múltiplas variáveis da paisagem (densidade de estradas, fragmentação do habitat, cobertura urbana etc.).
+    -   Seleção de modelos com base no **Critério de Informação (QIC)** para garantir precisão e simplicidade.
 
-1. **Leitura e resumo** dos dois artigos enviados pelo orientador.  
-2. **Escolha de espécies-alvo** (EUA = *Cathartes aura*, Brasil = definir).  
-3. **Levantamento de dados disponíveis** (GPS, eBird, SINBIOTA, CENIPA).  
-4. Construção da **tabela de metadados detalhada**.  
-5. Preparação de apresentação mais completa com resultados iniciais.  
+## Artigo 1: Discussão sobre as espécies
 
----
+-   **Urubu-de-cabeça-vermelha (*Cathartes aura*):**
+    -   Demonstra **alta plasticidade** e adaptação a ambientes modificados.
+    -   Prefere densidades de estradas intermediárias, sugerindo que se beneficia dos recursos associados, mas evita riscos de tráfego intenso.
+    -   É menos social e tem baixa fidelidade a locais de pouso, escolhendo-os com base em atributos favoráveis da paisagem.
+-   **Urubu-de-cabeça-preta (*Coragyps atratus*):**
+    -   Mais social, usando os mesmos locais de pouso em grupo, influenciado pela presença de outros indivíduos.
+
+## Artigo 2: "Environmental drivers..." (Dodge et al.)
+
+-   **Objetivo Principal:** Analisar os mecanismos que moldam a ecologia de movimento do urubu-de-cabeça-vermelha (*Cathartes aura*) em diferentes populações, investigando como as condições ambientais afetam sua busca por alimento e sua capacidade de voo.
+-   **Relevância para a pesquisa:** Este estudo reforça que o urubu-de-cabeça-vermelha é um excelente modelo para o projeto, pois sua movimentação é diretamente ligada a fatores ambientais, o que permite analisar os efeitos de alterações na paisagem.
+
+## Artigo 2: Resultados
+
+-   A pesquisa revelou uma enorme variação nos padrões de movimento da espécie, confirmando sua alta **plasticidade e adaptabilidade**.
+-   A movimentação do urubu-de-cabeça-vermelha está diretamente ligada a fatores ambientais, como:
+    -   **Disponibilidade de alimento:** medida pelo Índice de Vegetação.
+    -   **Ocorrência de térmicas e temperatura:** que facilitam o voo com baixa energia.
+-   A capacidade de voo em térmicas torna a espécie eficiente e adaptável, permitindo que ela se desloque por longas distâncias sobre diferentes paisagens.
+
+## Artigo 2: Conclusão
+
+-   Este estudo **fortalece a justificativa** para escolher o urubu-de-cabeça-vermelha como espécie de estudo.
+-   A grande plasticidade de movimento observada é um fator-chave para entender como a espécie pode se aproximar de aeroportos e áreas urbanas, já que é capaz de modificar seu comportamento de voo e busca por alimento em resposta a alterações na paisagem.
+
+# Conclusão da Análise de Viabilidade
+
+## Escolha da Espécie e Cenário
+
+-   Com base na análise dos estudos e na disponibilidade de dados, o **Urubu-de-cabeça-vermelha (*Cathartes aura*)** foi escolhido como a espécie de estudo para a pesquisa.
+-   O **Cenário dos Estados Unidos** foi considerado viável, pois possui um banco de dados robusto sobre *birdstrikes* (FAA) e extensa pesquisa sobre a ecologia da espécie.
+
+## Justificativa da Escolha
+
+-   **Abundância:** A espécie é abundante na América do Norte.
+-   **Adaptabilidade:** Mostra alta plasticidade comportamental em ambientes alterados por humanos.
+-   **Disponibilidade de Dados:** A vasta quantidade de dados na FAA e pesquisas publicadas sobre a ecologia da espécie nos EUA tornam a análise mais robusta.
+
+# Cenário 2: Brasil
+
+## Desafios e Oportunidades
+
+-   **Escolha da Espécie:** Diferente do cenário dos EUA, o Brasil não possui uma base de dados robusta de rastreamento individual (GPS) de aves.
+-   **Alternativa:** A análise será baseada em **dados de ocorrência** (*presença-ausência*), utilizando fontes como o eBird (dados brutos) e, se disponível, o SINBIOTA da FAPESP.
+
+## Dados Disponíveis para a Análise
+
+-   As informações a seguir foram baseadas nas bases de dados da tabela fornecida e em orientações sobre o acesso a dados de pesquisa no Brasil.
+
+### Dados de Aviação e Birdstrikes
+
+-   **Birdstrikes (Variável IC10):**
+    -   **Origem:** CENIPA e VRA-ANAC.
+    -   **Características:** Dados de acidentes aéreos causados por movimentos de aves.
+    -   **Limitação:** A base de dados é considerada incompleta em termos de detalhes (espécie, data e localização geográfica).
+-   **Tráfego Aéreo (Variável Ap):**
+    -   **Origem:** VRA-Voo Regular Ativo (ANAC).
+    -   **Características:** Dados de voos de chegada e saída do Brasil, com informações sobre origem, destino, tipo de aeronave e voo.
+
+## Dados Ambientais e Biológicos
+
+-   **Dados Meteorológicos (REDEMET):**
+    -   **Velocidade média do vento:** Média horária do vento em nós, por semana e aeroporto.
+    -   **Temperatura:** Média horária em Celsius, por semana e aeroporto.
+    -   **Teto:** Altura média horária acima do solo ou água, em pés.
+-   **Dados de Ocorrência de Aves (eBird):**
+    -   **Abundância (variável Ab):** Abundância relativa de aves dentro de buffers específicos (3, 8, 13, 15, 20, 25 km).
+    -   **Ocorrência (variável Ob):** Ocorrência média semanal de aves dentro dos mesmos buffers.
+
+## Parcerias Potenciais
+
+-   Para superar os desafios de dados, a pesquisa poderia se beneficiar de colaborações estratégicas:
+
+### INPE - Brazil Data Cube
+
+-   **Oportunidade:** Acesso a dados geoespaciais de cobertura e uso do solo.
+-   **Utilidade:** Fundamental para mapear distúrbios florestais e entender as transformações da paisagem nas proximidades dos aeroportos.
+
+### Prof. Alby - Pesquisa em Distúrbios Florestais
+
+-   **Oportunidade:** Acesso a dados específicos e especializados sobre distúrbios florestais no Brasil.
+-   **Utilidade:** Oferece uma fonte de dados mais detalhada e validada para a variável independente da pesquisa.
+
+## Análise e Metodologia no Cenário Brasil
+
+-   **Hipótese Central:** A proximidade de áreas com alta ocorrência/abundância de uma espécie de ave e o aumento do tráfego aéreo e dos distúrbios florestais estão correlacionados com o risco de *birdstrike*.
+-   **Análise:**
+    -   **Integração de Dados:** Unir as bases de dados de *birdstrike* (CENIPA), tráfego aéreo (ANAC) e variáveis ambientais/biológicas (REDEMET, eBird, INPE, Prof. Alby).
+    -   **Modelagem Estatística:** Utilizar modelos para analisar a relação entre as variáveis, considerando as limitações dos dados.
+-   **Desafio:** A qualidade e a granularidade dos dados de *birdstrike* no Brasil podem limitar a profundidade da análise.
+
+## Estudo de Caso: A Viabilidade da Análise com a Base de Dados do CENIPA
+
+-   *Anthropogenic features influencing occurrence of Black Vultures (Coragyps atratus) and Turkey Vultures (Cathartes aura) in an urban area in central Amazonian Brazil*
+
+-   O estudo de **Devault et al. (2014)** é uma **evidência crucial** para a pesquisa, pois demonstra que análises significativas podem ser realizadas no Brasil utilizando a base de dados do CENIPA.
+
+### Metodologia e Uso do CENIPA
+
+-   A pesquisa utilizou a base de dados do **CENIPA** para analisar colisões com urubus na Amazônia.
+-   Para complementar os dados de ocorrência de *birdstrikes*, o estudo integrou **pesquisas de campo** e **análises de paisagem** para associar o comportamento das aves a características do ambiente.
+
+## Contribuição para a Pesquisa
+
+-   O estudo **valida** a abordagem de análise, provando que é possível superar as limitações do CENIPA combinando os dados de colisões com informações sobre o habitat.
+-   As conclusões do artigo fornecem um **roteiro claro** para a pesquisa, confirmando que a relação entre distúrbios antropogênicos e o risco de *birdstrike* é real e pode ser investigada no contexto brasileiro.
+
+## Comparativo Final: EUA vs. Brasil
+
+-   **Cenário EUA:**
+    -   **Vantagem:** Dados robustos da FAA e extensas pesquisas sobre a ecologia da espécie de estudo.
+    -   **Viabilidade:** A pesquisa é viável e permite uma análise com alta confiança.
+
+-   **Cenário Brasil:**
+    -   **Vantagem:** Apesar dos desafios nos dados, há uma **maior possibilidade de parcerias estratégicas** (INPE e Prof. Alby) para obter dados geoespaciais e ambientais de alta qualidade.
+    -   **Superação do Desafio:** O estudo de caso de Devault et al. (2014) prova que é possível conduzir análises robustas usando o banco de dados do **CENIPA**, superando a limitação inicial de dados.
+    -   **Viabilidade:** A pesquisa é **viável** e com potencial para ser mais relevante e impactante no contexto local, gerando conhecimento novo e aplicado.
+
+# Considerações Finais
+
+## Conclusão
+
+-   Com base na análise de viabilidade, **o cenário brasileiro se apresenta como a melhor opção** para a Iniciação Científica.
+-   Apesar das complexidades, a combinação de parcerias estratégicas e a comprovação de que o banco de dados do CENIPA pode ser utilizado de forma eficaz fornecem um caminho claro para uma pesquisa **inovadora e com alto impacto prático**.
+-   Focar no Brasil permite abordar um problema local e contribuir diretamente com **soluções de manejo concretas** para a segurança aérea no país.
+
+## Tabela de Metadados: Variáveis de Aviação e Biológicas
+
+| Variável | Descrição | Tipo de Dado | Unidade de Medida | Fonte/Origem |
+| :--- | :--- | :--- | :--- | :--- |
+| `IC10` | Somatória de acidentes com aves | Numérica Discreta | Número de ocorrências | CENIPA / ANAC|
+| `Ap` | Somatório de voos diários | Numérica Discreta | Número de voos | VRA-Voo Regular Ativo (ANAC) |
+| `Ab` | Abundância relativa de aves | Numérica Contínua | Indivíduos | eBird |
+| `Ob` | Ocorrência de aves | Binária | Presença/\newline Ausência (1/0) | eBird |
+
+## Tabela de Metadados: Variáveis Ambientais
+
+| Variável | Descrição | Tipo de Dado | Unidade de Medida | Fonte/Origem |
+| :--- | :--- | :--- | :--- | :--- |
+| `velocidade_`\newline`vento` | Velocidade média do vento | Numérica Contínua | km/h ou nós | REDEMET |
+| `temperatura` | Temperatura média | Numérica Contínua | Graus Celsius (°C) | REDEMET |
+| `teto` | Altura acima do solo/água das nuvens | Numérica Discreta | Pés (ft) | REDEMET |
+| `disturbio_`\newline`florestal` | Presença de áreas urbanas, florestais, etc. | Categórica | N/A | INPE / Prof. Alby |
